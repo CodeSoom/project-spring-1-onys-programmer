@@ -1,0 +1,26 @@
+{
+  "name": "eonai",
+  "version": "1.0.0",
+  "description": "working out log",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onys-programmer/project-spring-1-onys-programmer.git"
+  },
+  "author": "onys-programmer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/onys-programmer/project-spring-1-onys-programmer/issues"
+  },
+  "homepage": "https://github.com/onys-programmer/project-spring-1-onys-programmer#readme",
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "webpack": "^5.5.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "3.7.1"
+  }
+}
