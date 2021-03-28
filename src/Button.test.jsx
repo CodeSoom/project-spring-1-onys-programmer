@@ -2,10 +2,7 @@ import { render } from '@testing-library/react';
 
 import React from 'react';
 
-import Button from './Button.jsx';
-
-import '@testing-library/jest-dom';
-
+import Button from './Button';
 
 test('Button', () => {
   const { container } = render((
