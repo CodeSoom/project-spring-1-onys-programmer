@@ -1,9 +1,9 @@
 import React from 'react';
 
+import Page from './Page';
+
 export default function App() {
   return (
-    <header>
-      운동 기록장📕
-    </header>
+    <Page />
   );
 }
