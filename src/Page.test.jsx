@@ -1,14 +1,22 @@
 import React from 'react';
 
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 
-import App from './App';
+import Page from './Page';
 
-test('App', () => {
-  const { container } = render((
-      <App />
+const handleClickAdd = jest.fn();
+
+test('Page', () => {
+  const { queryByText } = render((
+      <Page
+      onClickAdd={ handleClickAdd }
+      />
     ));
 
-  expect(container).toHaveTextContent(/운동 기록장/);
-  expect(container).toHaveTextContent('추가');
+  expect(queryByText(/운동 기록장/)).not.toBeNull;
+  expect(queryByText('추가')).not.toBeNull;
+
+  fireEvent.click(queryByText('추가'));
+
+  expect(handleClickAdd).toBeCalled();
 });
