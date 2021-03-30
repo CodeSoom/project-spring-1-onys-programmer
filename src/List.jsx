@@ -2,12 +2,12 @@ import React from 'react';
 
 export default function List({ exercises }) {
   return (
-    <div>
+    <ol>
       {exercises.map(exercise => (
-        <p>
-          {JSON.stringify(exercise)}
-        </p>
+        <li key={exercise.id}>
+          {exercise.title}
+        </li>
       ))}
-    </div>
+    </ol>
   );
 }

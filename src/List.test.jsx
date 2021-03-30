@@ -6,9 +6,9 @@ import List from './List';
 
 test('List', () => {
   const exercises = [
-    { title: '팔굽혀펴기' },
-    { title: '스쿼트' },
-    { title: '턱걸이' },
+    { id: 1, title: '팔굽혀펴기' },
+    { id: 2, title: '스쿼트' },
+    { id: 3, title: '턱걸이' },
   ];
 
   const { queryByText } = render((
