@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Input from './Input';
 import Button from './Button';
 import List from './List';
 
@@ -12,9 +13,10 @@ export default function Page({ onClickAdd }) {
 
   return (
     <>
-      <header>
+      <h1>
         운동 기록장📕
-      </header>
+      </h1>
+      <Input />
       <Button 
       onClick={onClickAdd}
       />
