@@ -8,7 +8,7 @@ export default function List({ exercises }) {
       {exercises.map(exercise => (
         <Item
           key={exercise.id}
-          title={exercise.title}
+          exercise={exercise}
         />
       ))}
     </ol>
