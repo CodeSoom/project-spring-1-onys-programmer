@@ -31,5 +31,4 @@ test('Page', () => {
   expect(queryByPlaceholderText('운동 이름을 입력하세요')).not.toBeNull;
   fireEvent.change(queryByPlaceholderText('운동 이름을 입력하세요'), { target: { value: 'a' } });
   expect(handleChangeTitle).toBeCalled();
-  
 });
