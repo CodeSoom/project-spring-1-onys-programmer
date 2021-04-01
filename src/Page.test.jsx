@@ -1,10 +1,11 @@
 import React from 'react';
 
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, queryByPlaceholderText, render } from '@testing-library/react';
 
 import Page from './Page';
 
 const handleClickAdd = jest.fn();
+const handleChangeTitle = jest.fn();
 
 test('Page', () => {
   const exercises = [
@@ -13,10 +14,11 @@ test('Page', () => {
     { id: 3, title: '스쿼트' },
   ];
 
-  const { queryByText } = render((
+  const { queryByText, queryByPlaceholderText } = render((
       <Page
       exercises={exercises}
-      onClickAdd={ handleClickAdd }
+      onChangeTitle={handleChangeTitle}
+      onClickAdd={handleClickAdd}
       />
     ));
 
@@ -24,6 +26,10 @@ test('Page', () => {
   expect(queryByText('추가')).not.toBeNull;
 
   fireEvent.click(queryByText('추가'));
-
   expect(handleClickAdd).toBeCalled();
+
+  expect(queryByPlaceholderText('운동 이름을 입력하세요')).not.toBeNull;
+  fireEvent.change(queryByPlaceholderText('운동 이름을 입력하세요'), { target: { value: 'a' } });
+  expect(handleChangeTitle).toBeCalled();
+  
 });

@@ -12,6 +12,10 @@ export default function App() {
     ],
   });
 
+  const [title, setTitle] = useState({
+    title: '',
+  });
+
   const { newId, exercises } = state;
 
   function handleClickAdd() {
@@ -21,9 +25,17 @@ export default function App() {
     });
   }
 
+  function handleChangeTitle(event) {
+    console.log('change');
+    setTitle({
+      title: event.target.value,
+    });
+  }
+
   return (
     <Page
       exercises={exercises}
+      onChangeTitle={handleChangeTitle}
       onClickAdd={handleClickAdd}
     />
   );
