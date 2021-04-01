@@ -23,7 +23,6 @@ export default function App() {
   }
 
   function handleChangeTitle(event) {
-    console.log('change');
     setState({
       ...state, exerciseTitle: event.target.value,
     });
